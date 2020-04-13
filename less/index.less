@@ -4,6 +4,8 @@
    License: none (public domain)
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Amiri&display=swap');
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -57,3 +59,96 @@ html, body {
     height: 100%;
 }
 
+// Variables
+
+
+
+@heroFont: 'Amiri', serif;
+@linkFont: red;
+@bc: whitesmoke;
+
+.container {
+	background-color: @bc;
+	max-width: 100%;
+
+	header {
+
+		h1 {
+			font-family: @heroFont;
+			font-size: 400%;
+			text-align: center;
+		}
+
+		nav {
+			display: flex;
+			justify-content: space-evenly;
+			padding-bottom: .4rem;
+			margin-bottom: .5rem;
+			border-bottom: .7rem dotted @linkFont;
+
+			a {
+				color: @linkFont;
+				letter-spacing: .2rem;
+				text-decoration: none;
+				border: .1rem solid black;
+				padding: 1.5%;
+			}
+		}
+
+	} //closes header
+
+	main {
+
+		.skills {
+			display: flex;
+
+			p {
+					
+			} //closes skills paragraph
+		} //closes skills
+
+		.contact {
+
+		} //closes contact
+
+	} //closes main
+
+	section {
+
+		.pokedex {
+
+			.galleryhead {
+
+				h2 {
+					text-align: center;
+					font-family: @heroFont;
+					font-size: 180%;
+				}
+			} //closes galleryhead
+
+			.galleryflex {
+				display: flex;
+				justify-content: space-evenly;
+
+				img {
+					width: 25%;	
+					border: .5rem dotted @linkFont;
+					padding: 5%;
+					
+				}
+			}//closes galleryflex
+
+		}//closes pokedex
+
+	} //closes section
+
+	footer {
+		text-align: center;
+
+		h3 {
+			font-size: 125%;
+			letter-spacing: .1rem;
+			border: .05rem solid @linkFont;
+		}
+	} //closes footer
+}
