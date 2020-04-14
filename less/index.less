@@ -4,6 +4,8 @@
    License: none (public domain)
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Amiri&display=swap');
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -50,10 +52,164 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 html, body {
     height: 100%;
 }
 
+// Variables
+
+.center () {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+@heroFont: 'Amiri', serif;
+@linkFont: red;
+@bc: whitesmoke;
+@mobile: ~"(max-width: 500px)";
+
+.container {
+	background-color: @bc;
+	max-width: 100%;
+
+	@media @mobile {
+		.center ();
+	}
+
+	header {
+		max-width: 100%;
+		display: flex;
+		flex-direction: column;
+
+		h1 {
+			font-family: @heroFont;
+			font-size: 450%;
+			text-align: center;
+			justify-content: space-evenly;
+		}
+
+		nav {
+			display: flex;
+			justify-content: space-evenly;
+			padding-bottom: .4rem;
+			margin-bottom: .5rem;
+			border-bottom: .7rem dotted @linkFont;
+			align-items: center;
+			
+
+			a {
+				color: @linkFont;
+				letter-spacing: .2rem;
+				text-decoration: none;
+				border: .1rem solid black;
+				padding: 1.5%;
+				max-width: 100%;
+				margin: .4rem;
+			}
+		}
+
+	} //closes header
+
+	main {
+
+		.skills {
+			display: flex;
+			flex-direction: row-reverse;
+
+			@media @mobile {
+				.center();
+			}
+
+			p {
+				width: 60%;
+				font-family: @heroFont;
+				font-size: 1.4rem;
+				margin-top: 3%;
+				margin-bottom: 3%;
+			} //closes skills paragraph
+		} //closes skills
+
+		.contact {
+			border-radius: 5px;
+			background-color: @bc;
+			padding: 20px;
+			display: flex;
+			width: 63%;
+
+			@media @mobile {
+				display: none;
+			}
+
+			form {
+
+				flex-direction: column;
+				input[type=text], select, textarea {
+					width: 100%;
+					padding: .8rem;
+					border: .3rem dotted black;
+					box-sizing: border-box;
+					margin-top: .5rem;
+					margin-bottom: .5rem;
+
+				}
+			}
+		} //closes contact
+
+	} //closes main
+
+	section {
+
+		.pokedex {
+
+			.galleryhead {
+
+				h2 {
+					text-align: center;
+					font-family: @heroFont;
+					font-size: 180%;
+					margin-top: 2rem;
+				}
+			} //closes galleryhead
+
+			.galleryflex {
+				display: flex;
+				justify-content: space-evenly;
+				margin: 2rem;
+
+				@media @mobile {
+					.center();
+				}
+
+				img {
+					width: 25%;	
+					border: .5rem dotted @linkFont;
+					padding: 5%;
+
+					@media @mobile {
+						width: 90%;
+						margin-bottom: 1rem;
+						border: none;
+					}
+					
+				}
+			}//closes galleryflex
+
+		}//closes pokedex
+
+	} //closes section
+
+	footer {
+		text-align: center;
+
+		h3 {
+			font-size: 125%;
+			letter-spacing: .1rem;
+			border: .05rem solid @linkFont;
+		}
+	} //closes footer
+}
